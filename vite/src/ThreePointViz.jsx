@@ -21,7 +21,7 @@ function Line({ start, end }) {
   }
 
 
-const ThreePointVis = ({data, settings}) => {
+const ThreePointVis = ({data, settings, search_keyword}) => {
 
   const palette = distinctColors({count: 50, lightMin:50, lightMax: 80, chromaMin:70})
 
@@ -37,7 +37,7 @@ const ThreePointVis = ({data, settings}) => {
         groundColor="#080820"
         intensity={1.0}
       />
-      <DataPoints data={data} palette={palette} highlightedGroup={highlightedGroup} setHighlightedGroup={setHighlightedGroup} settings={settings}></DataPoints>
+      <DataPoints data={data} palette={palette} highlightedGroup={highlightedGroup} setHighlightedGroup={setHighlightedGroup} settings={settings} search_keyword={search_keyword}></DataPoints>
       {settings[0].showLines && <DataLines data={data} palette={palette} highlightedGroup={highlightedGroup}></DataLines>}
       <Line start={[-1, 0, 0]} end={[1, 0, 0]} />
       <Line start={[0, -1, 0]} end={[0, 1, 0]} />

@@ -17,6 +17,10 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+dependencies = [
+	"chromadb"
+]
+
 [project.urls]
 "Homepage" = "https://github.com/mtybadger/chromaviz"
 "Bug Tracker" = "https://github.com/mtybadger/chromaviz/issues"

@@ -1,7 +1,7 @@
 
 import { Tooltip as ReactTooltip } from 'react-tooltip'
 
-const Tooltip = ({tip, settings}) => {
+const Tooltip = ({tip, settings, keyword}) => {
 
     const renderList = (data) => {
         if (typeof data === 'object' && data !== null) {
@@ -15,7 +15,14 @@ const Tooltip = ({tip, settings}) => {
             </ul>
           );
         } else {
-          return <span>{data}</span>;
+          if (keyword && data.indexOf && data.indexOf(keyword) != -1) {
+
+            const c = data.replace(keyword, `<font color="red">${keyword}</font>`)
+
+            return <div dangerouslySetInnerHTML={{__html: c}}></div>;
+
+          }
+          return <div>{data}</div>;
         }
       };
 
